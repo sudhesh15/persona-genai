@@ -47,5 +47,4 @@ app.get('/personas', (req, res) => {
   res.json(personas);
 });
 
-const PORT = 5000;
-app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));
+export default app;
