@@ -7,6 +7,7 @@ interface Persona {
   name: string;
   age: number;
   birthday: string;
+  intro: string;
   characteristics: string[];
 }
 
@@ -23,7 +24,7 @@ const Index = () => {
     // Simulate API call with fallback data
     const fetchPersonas = async () => {
       try {
-        const response = await fetch("http://localhost:5000/personas");
+        const response = await fetch("/api/personas");
         if (response.ok) {
           const data = await response.json();
           setPersonas(data);
@@ -38,18 +39,21 @@ const Index = () => {
             name: "Sarah AI",
             age: 25,
             birthday: "March 15",
+            intro: "A friendly AI assistant ready to help you with anything.",
             characteristics: ["Friendly", "Creative", "Helpful", "Enthusiastic"]
           },
           person2: {
             name: "Alex Mentor",
             age: 30,
             birthday: "July 22",
+            intro: "An experienced mentor with a wealth of knowledge.",
             characteristics: ["Professional", "Analytical", "Patient", "Wise"]
           },
           person3: {
             name: "TechBot",
             age: 1,
             birthday: "January 1",
+            intro: "A highly advanced AI designed to assist with technical queries.",
             characteristics: ["Logical", "Efficient", "Precise", "Advanced"]
           }
         });
@@ -101,7 +105,7 @@ const Index = () => {
 
       {/* Chat Window */}
       <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
-        <ChatWindow personaId={selected} />
+        <ChatWindow personaId={selected} personaName={personas[selected]?.name || ''} />
       </div>
     </div>
   );
