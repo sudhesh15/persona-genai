@@ -27,7 +27,7 @@ function getSystemPrompt(persona) {
   `;
 }
 
-app.post('/chat', async (req, res) => {
+app.post('/api/chat', async (req, res) => {
   const { personaId, userMessage } = req.body;
   const persona = personas[personaId];
   if (!persona) return res.status(404).send({ error: "Persona not found" });
@@ -43,8 +43,12 @@ app.post('/chat', async (req, res) => {
   res.json({ reply: response.choices[0].message.content });
 });
 
-app.get('/personas', (req, res) => {
+app.get('/api/personas', (req, res) => {
   res.json(personas);
 });
 
 export default app;
+
+app.listen(process.env.PORT || 5000, () => {
+  console.log(`Server is running on port ${process.env.PORT || 5000}`);
+});
