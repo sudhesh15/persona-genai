@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import { OpenAI } from 'openai';
-import { personas } from '../personas.js';
+import { personas } from '../backend/personas.js';
 
 function getSystemPrompt(persona) {
   return (
