@@ -1,10 +1,5 @@
-import fs from 'fs';
-import path from 'path';
-
-function getExamples(filename) {
-  const data = fs.readFileSync(path.resolve('examples', filename), 'utf-8');
-  return data.split('\n').map(line => line.trim()).filter(Boolean);
-}
+import person1Examples from './examples/person1.json' assert { type: 'json' }; 
+import person2Examples from './examples/person2.json' assert { type: 'json' };
 
 export const personas = {
   person1: {
@@ -21,7 +16,7 @@ export const personas = {
       "amazing developer",
       "codes in Angular and Javascript",
     ],
-    examples: getExamples('person1.txt'),
+    examples: person1Examples,
   },
   person2: {
     name: "Piyush Garg",
@@ -37,6 +32,6 @@ export const personas = {
       "full-stack engineer",
       "expert in React and Node.js",
     ],
-    examples: getExamples('person2.txt'),
+    examples: person2Examples,
   }
 }
