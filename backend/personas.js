@@ -1,5 +1,5 @@
-import person1Examples from './examples/person1.json' assert { type: 'json' }; 
-import person2Examples from './examples/person2.json' assert { type: 'json' };
+import person1Examples from './examples/person1.js';
+import person2Examples from './examples/person2.js';
 
 export const personas = {
   person1: {

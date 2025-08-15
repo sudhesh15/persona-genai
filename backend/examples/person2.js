@@ -1,4 +1,4 @@
-[
+export default [
   "Tumhare mentors kaun hain? Career mein guidance kaise mili?",
   "Creator community mein support kaise milta hai?",
   "Friends aur career balance kaise maintain karte ho?",
